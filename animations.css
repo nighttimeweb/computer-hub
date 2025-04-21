@@ -1,0 +1,68 @@
+/* Additional CSS for animations and transitions */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form validation styles */
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #ff3b30;
+}
+
+.success-message {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 992px) {
+    #hero {
+        height: auto;
+        min-height: 80vh;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, footer, #hero, .hero-buttons, .contact-form, .map-container {
+        display: none;
+    }
+    
+    body, .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #services, #products, #contact {
+        padding: 20px 0;
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        margin-bottom: 20px;
+    }
+    
+    .services-grid, .products-grid {
+        display: block;
+    }
+    
+    .service-card, .product-card {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
